@@ -1,0 +1,20 @@
+{
+  "name": "202304-w2.5ch5.1-kevin-schans",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinVanDerSchans/202304-W2.5CH5.1-Kevin-Schans.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KevinVanDerSchans/202304-W2.5CH5.1-Kevin-Schans/issues"
+  },
+  "homepage": "https://github.com/KevinVanDerSchans/202304-W2.5CH5.1-Kevin-Schans#readme"
+}
