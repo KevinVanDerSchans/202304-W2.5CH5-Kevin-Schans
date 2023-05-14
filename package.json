@@ -1,7 +1,7 @@
 {
   "name": "202304-w2.5ch5.1-kevin-schans",
   "version": "1.0.0",
-  "description": "",
+  "description": "# Conway Game of Life 🦠 !",
   "main": "index.js",
   "scripts": {
     "build": "tsc --watch",
