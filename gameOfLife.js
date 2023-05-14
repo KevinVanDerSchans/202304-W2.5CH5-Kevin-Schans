@@ -18,16 +18,14 @@ const createGameTable = (rows, columns) => {
 
 createGameTable(20, 20);
 
-
-function changeCellStatus (j, i) {
-  const  getCell = document.querySelector(`cell-${j + "-" + i}`);
-
-  if (getCell.style.background !== 'black') {
-      getCell.style.background = 'black';
-
-  } else {
-      getCell.style.background = '';
-  }
+const changeCellStatus = (x, y) => {
+    const getCell = document.querySelector(`.cell-${x + "-" + y}`);
+    
+    if (getCell.style.background !== 'black') {
+        getCell.style.background = 'black';
+        
+    } else {
+        getCell.style.background = '';
+    }
 }
-
-changeCellStatus()
+changeCellStatus(x, y)
