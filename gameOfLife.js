@@ -1,6 +1,4 @@
 let actualTable = [];
-let reproduce = false;
-
 
 const createGameTable = (rows, columns) => {
     let insertTableHTML = '<table>';
@@ -10,18 +8,20 @@ const createGameTable = (rows, columns) => {
             for (let x = 0; x < columns; x++) {
                 insertTableHTML += `<td class="cell-${x + "-" + y}" onmouseup="changeCellStatus(${x}, ${y})">`
                 insertTableHTML += '</td>'
-            };
+            }
+
         insertTableHTML += '</tr>';
-    };
+    }
     
     insertTableHTML += '</table>';
-    let container = document.querySelector('.table-container');
+    const container = document.querySelector('.table-container');
     container.innerHTML = insertTableHTML;
 }
+
 createGameTable(20, 20);
 
 const changeCellStatus = (x, y) => {
-    let getCell = document.querySelector(`.cell-${x + "-" + y}`);
+    const getCell = document.querySelector(`.cell-${x + "-" + y}`);
 
     if (getCell.style.background !== 'black') {
         getCell.style.background = 'black';
@@ -31,17 +31,18 @@ const changeCellStatus = (x, y) => {
     }
 }
 
-const checkAndUpdateActualTable = (x, y) => {      // fotografiar()
+const checkAndUpdateActualTable = (columns, rows) => {
+  changeCellStatus()
     actualTable = [];
 
     for (let x = 0; x < columns; x++) {
         actualTable.push([]);
         
         for (let y = 0; y < columns; y++) {
-            let getCell = document.querySelector(`.cell-${x + "-" + y}`);
+            const getCell = document.querySelector(`.cell-${x + "-" + y}`);
             actualTable[x][y] = getCell.style.background === 'black';
         }
-    };        
+    }        
 };
 
 const countLiveCells = (x, y) => {
@@ -61,16 +62,17 @@ const countLiveCells = (x, y) => {
             }
         }
     }
+
     return liveCells;
 };
 
-const nextStatus = (x, y) => {
+const nextStatus = (rows, columns) => {
     checkAndUpdateActualTable()
 
     for (let x = 0; x < columns; x++) {
         for (let y = 0; columns; y++) {
-            let livedCells = countLiveCells(x, y)
-            let getCell = document.querySelector(`.cell-${x + "-" + y}`);
+            const livedCells = countLiveCells(x, y)
+            const getCell = document.querySelector(`.cell-${x + "-" + y}`);
 
             if (actualTable[x][y]) {
                 if (livedCells < 2 || livedCells > 3)
@@ -78,8 +80,9 @@ const nextStatus = (x, y) => {
 
             } else {
                 if (livedCells === 3) 
-                    getCell.style.background = 'black';
+                    getCell.style.background = 'black'
+                  }
             }
         }
     }
-};
+}
